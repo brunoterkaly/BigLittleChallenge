@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Trials Game Engine</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+    <script type="text/javascript" src="/js/engine.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        monitorStatusSocket()
+      });
+    </script>
+  </head>
+  <body>
+    <title>Trials Game Engine</title>
+
+    <div id="wrap">
+      <div id="left-col">
+	<h2>Status</h2>
+	<p><span id="state">{{ status.state }}</span></p>
+
+	<h2>Game Tickets</h2>
+	<p><span id="number-of-players"></span> players required.</p>
+
+	<h3>Assigned Tickets</h3>
+	<ol id="tickets-list">
+	</ol>
+
+	<h2 id="player-table-title">Player Table</h2>
+	<ol id="player-table">
+	</ol>
+
+	<button id="abort">Abort Game</button>
+      </div>
+
+      <hr/>
+
+      <div id="debug">
+	      <h4>Debug</h4>
+        <p>Ping: <b><span id="ping-pong"></span>ms</b></p>
+	      <p>Async mode is '{{ async_mode }}'</p>
+
+        <h3>Log</h3>
+        <div id="log">
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
